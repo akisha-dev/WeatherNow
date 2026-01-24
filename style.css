@@ -1,8 +1,14 @@
 
+body{
+  background-color:#71b7ca ;
+  cursor:url("images.png"),default;
+  font-family:'Bitcount Single','Courier New', Courier, monospace;
+  color:rgb(255, 248, 248);
+}
 .loader {
   width: 60px;
   aspect-ratio: 2;
-  --_g: no-repeat radial-gradient(circle closest-side,#000 90%,#0000);
+  --_g: no-repeat radial-gradient(circle closest-side,#ffffff 90%,#0000);
   background: 
     var(--_g) 0%   50%,
     var(--_g) 50%  50%,
@@ -15,4 +21,46 @@
     40%{background-position:0% 100%, 50%   0%,100%  50%}
     60%{background-position:0%  50%, 50% 100%,100%   0%}
     80%{background-position:0%  50%, 50%  50%,100% 100%}
+}
+h1{
+  font-size:40px;
+}
+.container{
+  display:flex;
+
+}
+
+input{
+  font-family:'Bitcount Single','Courier New', Courier, monospace;
+  color: Black;
+ 
+  font-size:14px;
+   
+  width:400px;
+  height:45px;
+  border-radius:42px;
+  border-width:10px;
+  border:solid;
+  border-color:rgb(87, 86, 86);
+  padding-left:15px;
+  box-shadow:1px 1px  rgb(73, 73, 73);
+
+ 
+
+}
+button{
+  font-family:'Bitcount Single';
+  font-size:14px;
+  color:rgb(63, 62, 62);
+  margin-left:10px;
+  width:115px;
+  height:42px;
+  border-radius:20px;
+  border:solid;
+  background-color:white;
+  box-shadow:1px 1px  rgb(73, 73, 73);
+  position:relative;
+  left:10px;
+  cursor:pointer;
+
 }
