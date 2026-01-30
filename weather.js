@@ -1,11 +1,12 @@
 document.querySelector('.loader').style.display = 'none';
+
+document.querySelector('.current').style.display="none";
 let currentconditionHtml ="";
 
 
             async function getweather(){
                 try{
-                   document.querySelector('.loader').style.display = 'none';
-
+                   
                   let city= document.getElementById('city').value.trim();
                   if(!city){
                     alert('Please enter a valid name');
@@ -13,25 +14,25 @@ let currentconditionHtml ="";
                   }
                   document.querySelector('.loader').style.display = 'block';
                   let response = await fetch(`https://wttr.in/${city}?format=j1`); 
-                  document.querySelector('.loader').style.display = 'block';
+                  
                   let data = await response.json()
                   console.log(data);
              
                   
                    if(data.nearest_area[0].areaName[0].value!= 'New Found Out' && city!=''){
                     document.querySelector('.loader').style.display = 'none';
+                    document.querySelector('.current').style.display="block";
                   
                   currentconditionHtml =`
+                  
                   <div class="results">
                    <div class=situ>The Current weather in ${city} </div>
-                   <div class="time">Local Observation Time : ${data.current_condition[0].localObsDateTime}</div>
-                   <div class=tempC>Temperature(in Celsius) : ${data.current_condition[0].temp_C}</div>
-                    <div class=tempF>Temperature(in Farheniet) : ${data.current_condition[0].temp_F}</div>
-                    <div class=situation>${data.current_condition[0].weatherDesc[0].value}</div>
                     <div class=feelslikeC>Feels Like(C) : ${data.current_condition[0].FeelsLikeC}</div>
                     <div class=feelslikeF>Feels Like(F) ${data.current_condition[0].FeelsLikeF}</div>
                     <div class=humidity>Humidity : ${data.current_condition[0].humidity}</div>
-                    </div>
+                   <div class=situation>${data.current_condition[0].weatherDesc[0].value}</div>
+                   <div class="time">Local Observation Time : ${data.current_condition[0].localObsDateTime}</div>
+                   </div>
                    `
 
                     document.querySelector('.current')

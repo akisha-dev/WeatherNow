@@ -3,14 +3,21 @@
     <head>
         <title>WeatherNow
         </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <H1>WeatherNow</H1>
+        <div class="container">
         <input type="text" placeholder="Enter the city name here" id="city">
         <button onclick ="getweather();">WeatherNow</button>
+</div>
         <div class="current">
         </div>
-    <div class="loader"></div>
+        <div class = parent>
+    <div class="loader"></div></div>
 
         <script src="weather.js"></script>
     </body>
